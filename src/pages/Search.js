@@ -72,12 +72,13 @@ class Search extends Component {
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
     API.getUsers()
-      .then(res => this.setState({ results: res.data }))
+      .then(res => this.setState({ results: res.data.results }))
       .catch(err => console.log(err));
   }
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
+    console.log(this.state.search)
   };
 
   handleFormSubmit = event => {
@@ -91,6 +92,7 @@ class Search extends Component {
       })
       .catch(err => this.setState({ error: err.message }));
   };
+
   render() {
     return (
       <div>
@@ -108,13 +110,15 @@ class Search extends Component {
             employees={this.state.employees}
           />
           <table>
-            <th>
-              <td>Photo</td>
-              <td>Name</td>
-              <td>Email</td>
-              <td>Phone</td>
-              <td>Cell Phone</td>
-            </th>
+            <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Cell Phone</th>
+            </tr>
+            </thead>
           <SearchResults results={this.state.results} />
           </table>
         </Container>
