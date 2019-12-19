@@ -1,0 +1,12 @@
+ul.search-results img {
+  margin: 0 auto;
+}
+
+table {
+  border: 1px solid black;
+}
+
+td {
+  width: 200px;
+  border: 1px solid black;
+}
