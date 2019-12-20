@@ -8,7 +8,7 @@ function SearchResults(props) {
       {props.results.map(result => (
         <tr key={result.id.value}>
           <td><img alt="Employee" src={result.picture.thumbnail} className="img-fluid" /></td>
-          <td>{result.name.first} {result.name.last}</td>
+          <td>{result.name.last}, {result.name.first}</td>
           <td>{result.email}</td>
           <td>{result.phone}</td>
           <td>{result.cell}</td>
